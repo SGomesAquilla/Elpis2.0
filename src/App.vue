@@ -4,8 +4,8 @@
 
 <template>
   <Navbar />
+  <Hero />
 </template>
 
 <style scoped>
-  
 </style>
