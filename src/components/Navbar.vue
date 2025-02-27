@@ -8,64 +8,102 @@
       <a href=""><img :src="logo.elpis" class="elpisL" alt="Home"></a>
       <nav class="nav-buttons">
         <button class="navButton">
-          <img :src="logo.reading" class="navIconR" alt="Reading"> Reading
+          <img :src="logo.reading" class="navIcon" alt="Reading"> Reading
         </button>
         <button class="navButton">
-          <img :src="logo.song" class="navIconS" alt="Songs"> Songs
+          <img :src="logo.song" class="navIcon" alt="Songs"> Songs
         </button>
         <button class="navButton">
-          <img :src="logo.community" class="navIconC" alt="Community"> Community
+          <img :src="logo.community" class="navIcon" alt="Community"> Community
         </button>
       </nav>
+      <div class="hamburger-menu"></div>
     </div>
   </header>
 </template>
 
 <style scoped>
   .menu {
-    background-color: rgba(189, 42, 42, 0.962);
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    padding: 0 20px;
+    justify-content: space-between; /* Distributes items */
+    width: 100%; /* Ensure it fills the header */
+    background-color: rgba(253, 253, 253, 0.653);
   }
 
   .nav-buttons {
     display: flex;
-    gap: 50px;
-  }
-
-  .elpisL {
-    width: 80px; /* Make the Elpis logo larger */
+    justify-content: center; /* Center the buttons */
+    flex-grow: 1; /* Allow to grow and take up space */
+    white-space: nowrap; /* Prevent buttons from wrapping */
   }
 
   .navButton {
-    display: flex; /* Use flexbox to center the image and text */
-    flex-direction: column; /* Stack image and text vertically */
-    align-items: center; /* Center horizontally */
-    text-align: center; /* Center text */
-    background: none; /* remove default button background */
-    border: none; /* remove default button border */
-    border-radius: 20px;
-    cursor: pointer; /* make cursor a pointer on hover */
-    padding: 10px; /* add some padding to the button */
+    margin: 0 20px; /* Space between buttons */
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-direction: column;
+    text-align: center;
+    flex-basis: 85px;
+    border: 0;
+    border-radius: 15%;
+    background-color: rgba(255, 255, 255, 0);
   }
 
   .navButton:hover {
-    filter: brightness(110%);
-    transition-duration: 500ms;
     background-color: #cac9c939;
+    filter: brightness(95%);
+    transition-duration: 500ms;
   }
 
-  .navButton img {
-    width: 30px; /* Adjust image size in buttons */
-    margin-bottom: 5px; /* Add space between image and text */
+  .navIcon {
+    width: 30px;
+    height: 30px;
+    object-fit: contain;
   }
 
-  /* Responsive Styles */
+  .navIcon:hover {
+    filter: invert(22%);
+    transition-duration: 250ms;
+  }
+  
+  .elpisL {
+    width: 70px;
+    margin-left: 15px;
+    transition: 250ms ease-in-out;
+  }
+
+  .elpisL:hover {
+    filter: brightness(105%);
+    rotate: -6deg;
+  }
+
+  .hamburger-menu {
+    width: 41px; /*adjust hamburger size*/
+    height: 2px;
+    right: 20px;
+    background-color: black;
+    position: relative;
+  }
+  .hamburger-menu::before,
+  .hamburger-menu::after{
+    content: '';
+    position: absolute;
+    width: 41px;
+    height: 2px;
+    background-color: black;
+  }
+  .hamburger-menu::before{
+    top: -8px;
+  }
+  .hamburger-menu::after{
+    top: 8px;
+  }
+
   @media (max-width: 768px) {
-    .nav-buttons {
-      gap: 20px;
+    .navButton {
+      margin: 0 10px; /* Reduce spacing on smaller screens */
     }
   }
 </style>
