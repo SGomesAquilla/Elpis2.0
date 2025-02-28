@@ -1,5 +1,13 @@
 <script setup>
   import logo from '@/assets/img/images.js';
+  import { ref } from 'vue';
+
+  const isMenuOpen = ref(false);
+
+  //everytime hamburger-menu class item is clicked its states changes through true and false, and this affects the css with the .click event I set
+  const toggleMenu = () => {
+    isMenuOpen.value = !isMenuOpen.value;
+  };
 </script>
 
 <template>
@@ -17,7 +25,11 @@
           <img :src="logo.community" class="navIcon" alt="Community"> Community
         </button>
       </nav>
-      <div class="hamburger-menu"></div>
+      <button class="hamburger-menu" @click="toggleMenu" :class="{ 'click': isMenuOpen }">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+      </button>
     </div>
   </header>
 </template>
@@ -52,6 +64,7 @@
   }
 
   .navButton:hover {
+    cursor: pointer;
     background-color: #cac9c939;
     filter: brightness(95%);
     transition-duration: 500ms;
@@ -79,31 +92,41 @@
     rotate: -6deg;
   }
 
-  .hamburger-menu {
+  .hamburger-menu { /* sets hamburger menu toggle button dimensions and properties */
+    width: 55px;
+    height: 35px;
+    right: 20px;
+    position: relative;
+    border: 0;
+    background-color: rgba(255, 255, 255, 0);
+    cursor: pointer;
+  }
+
+  .bar {
+    margin: 6px 7px; /* centered inside the button */
     width: 41px; /*adjust hamburger size*/
     height: 2px;
-    right: 20px;
     background-color: black;
     position: relative;
-  }
-  .hamburger-menu::before,
-  .hamburger-menu::after{
-    content: '';
-    position: absolute;
-    width: 41px;
-    height: 2px;
-    background-color: black;
-  }
-  .hamburger-menu::before{
-    top: -8px;
-  }
-  .hamburger-menu::after{
-    top: 8px;
+    transition: 250ms ease-in-out;
   }
 
   @media (max-width: 768px) {
     .navButton {
       margin: 0 10px; /* Reduce spacing on smaller screens */
     }
+  }
+
+  .hamburger-menu.click .bar:nth-child(2) {
+    opacity: 0;
+    transform: translate(-10px);
+  }
+
+  .hamburger-menu.click .bar:nth-child(1) {
+    transform: rotate(45deg) translate(1px, 10px);
+  }
+
+  .hamburger-menu.click .bar:nth-child(3) {
+    transform: rotate(-45deg) translate(1px, -10px);
   }
 </style>
