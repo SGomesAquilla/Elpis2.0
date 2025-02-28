@@ -1,6 +1,6 @@
 <script setup>
   import logo from '@/assets/img/images.js';
-  import { ref } from 'vue';
+  import { ref, computed } from 'vue';
 
   const isMenuOpen = ref(false);
 
@@ -8,20 +8,25 @@
   const toggleMenu = () => {
     isMenuOpen.value = !isMenuOpen.value;
   };
+
+  //so I dont need to write this conditional every time on several buttons
+  const toggledHamburger = computed(() => {
+    return isMenuOpen.value ? 'none' : 'flex'
+  });
 </script>
 
 <template>
   <header>
     <div class="menu">
-      <a href=""><img :src="logo.elpis" class="elpisL" alt="Home"></a>
+      <a href=""><img :src="logo.elpis" class="elpisL" alt="Home" :style="{ display: toggledHamburger }"></a>
       <nav class="nav-buttons">
-        <button class="navButton" :style="{ display: isMenuOpen ? 'none' : 'flex' }">
+        <button class="navButton" :style="{ display: toggledHamburger }">
           <img :src="logo.reading" class="navIcon" alt="Reading"> Reading
         </button>
-        <button class="navButton" :style="{ display: isMenuOpen ? 'none' : 'flex' }">
+        <button class="navButton" :style="{ display: toggledHamburger }">
           <img :src="logo.song" class="navIcon" alt="Songs"> Songs
         </button>
-        <button class="navButton" :style="{ display: isMenuOpen ? 'none' : 'flex' }">
+        <button class="navButton" :style="{ display: toggledHamburger }">
           <img :src="logo.community" class="navIcon" alt="Community"> Community
         </button>
       </nav>
@@ -41,6 +46,7 @@
     justify-content: space-between; /* Distributes items */
     width: 100%; /* Ensure it fills the header */
     background-color: rgba(253, 253, 253, 0.653);
+    height: 59px;
   }
 
   button {
