@@ -1,9 +1,22 @@
-<script setup></script>
+<script setup>
+    import { defineProps } from 'vue';
+
+    defineProps({
+        title: {
+            type: String,
+            default: "Renew your mind with your daily dose of hope"
+        },
+        subtitle: {
+            type: String,
+            default: ' "be able to test and approve what God’s will is—his good, pleasing and perfect will." - Romans 12:2 '
+        }
+    })
+</script>
 
 <template>
     <div class="titleHeader">
-      <h1>Renew your mind with your daily dose of hope</h1>
-      <h2>"be able to test and approve what God’s will is—his good, pleasing and perfect will." - Romans 12:2 </h2>
+      <h1>{{ title }}</h1>
+      <h2> {{ subtitle }} </h2>
     </div>
 </template>
 

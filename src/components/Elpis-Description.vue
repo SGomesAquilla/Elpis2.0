@@ -30,37 +30,37 @@
 </template>
 
 <style scoped>
-    .maintext {
-        display: flex;
-        justify-content: center;
-        margin-inline: 20%;
-        margin-top: 5%;
-        margin-bottom: 5%;
-        background-color:rgba(248, 238, 224, 0.927);
-        border-radius: 5%;
-        border: solid black 2px;
-        padding: 3%;
-        font-size: 17px;
-        box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.753);
-        margin-bottom:30% ;
+  .maintext {
+    display: flex;
+    justify-content: center;
+    margin-inline: 20%;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    background-color:rgba(248, 238, 224, 0.927);
+    border-radius: 5%;
+    border: solid black 2px;
+    padding: 3%;
+    font-size: 17px;
+    box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.753);
+    margin-bottom:30% ;
 
-    }
+  }
 
-    .maintext p {
-        padding: 15px;
-    }
+  .maintext p {
+    padding: 15px;
+  }
 
-    .maintext h2 {
-        border: solid rgba(0, 0, 0, 0.259) 1px;
-        border-radius: 1px;
-        margin-bottom: 10px;
-        padding-inline: 1%;
-        box-shadow: 1px 1px 1px black;
-        background-image: url(../assets/img/background2.png);
-    }
+  .maintext h2 {
+    border: solid rgba(0, 0, 0, 0.259) 1px;
+    border-radius: 1px;
+    margin-bottom: 10px;
+    padding-inline: 1%;
+    box-shadow: 1px 1px 1px black;
+    background-image: url(../assets/img/background2.png);
+  }
 
-    .maintext li{
-        list-style: none;
-        padding: 2px;
-    }
+  .maintext li{
+    list-style: none;
+    padding: 2px;
+  }
 </style>
