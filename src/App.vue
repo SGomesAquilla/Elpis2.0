@@ -2,6 +2,7 @@
   import Navbar from '@/components/Navbar.vue';
   import Hero from '@/components/Hero.vue';
   import ElpisDescription from '@/components/Elpis-Description.vue';
+  import Foot from '@/components/Foot.vue';
 </script>
 
 <template>
@@ -12,6 +13,7 @@
       <ElpisDescription />
     </main>
   </body>
+  <Foot />
 </template>
 
 <style scoped>

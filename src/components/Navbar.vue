@@ -43,15 +43,19 @@
     background-color: rgba(253, 253, 253, 0.653);
   }
 
+  button {
+    padding: 6px;
+  }
+
   .nav-buttons {
     display: flex;
     justify-content: center; /* Center the buttons */
     flex-grow: 1; /* Allow to grow and take up space */
     white-space: nowrap; /* Prevent buttons from wrapping */
+    gap: 35px;
   }
 
   .navButton {
-    padding: 10px 0;
     margin: 0 20px; /* Space between buttons */
     display: flex;
     align-items: center;
@@ -60,6 +64,7 @@
     text-align: center;
     flex-basis: 85px;
     border: 0;
+    border-radius: 15%;
     background-color: rgba(255, 255, 255, 0);
   }
 
@@ -83,7 +88,7 @@
   }
 
   .elpisL:hover {
-    filter: brightness(105%);
+    filter: brightness(108%);
     rotate: -6deg;
   }
 
