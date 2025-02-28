@@ -51,38 +51,33 @@
   }
 
   .navButton {
+    padding: 10px 0;
     margin: 0 20px; /* Space between buttons */
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 5px;
     flex-direction: column;
     text-align: center;
     flex-basis: 85px;
     border: 0;
-    border-radius: 15%;
     background-color: rgba(255, 255, 255, 0);
   }
 
   .navButton:hover {
     cursor: pointer;
-    background-color: #cac9c939;
-    filter: brightness(95%);
+    background-color: #ffffff73;
+    filter: brightness(95%) invert(8%);
     transition-duration: 500ms;
   }
 
   .navIcon {
-    width: 30px;
+    width: 27px;
     height: 30px;
     object-fit: contain;
   }
-
-  .navIcon:hover {
-    filter: invert(22%);
-    transition-duration: 250ms;
-  }
   
   .elpisL {
-    width: 70px;
+    width: 60px;
     margin-left: 15px;
     transition: 250ms ease-in-out;
   }
