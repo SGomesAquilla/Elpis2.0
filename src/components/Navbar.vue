@@ -15,13 +15,13 @@
     <div class="menu">
       <a href=""><img :src="logo.elpis" class="elpisL" alt="Home"></a>
       <nav class="nav-buttons">
-        <button class="navButton">
+        <button class="navButton" :style="{ display: isMenuOpen ? 'none' : 'flex' }">
           <img :src="logo.reading" class="navIcon" alt="Reading"> Reading
         </button>
-        <button class="navButton">
+        <button class="navButton" :style="{ display: isMenuOpen ? 'none' : 'flex' }">
           <img :src="logo.song" class="navIcon" alt="Songs"> Songs
         </button>
-        <button class="navButton">
+        <button class="navButton" :style="{ display: isMenuOpen ? 'none' : 'flex' }">
           <img :src="logo.community" class="navIcon" alt="Community"> Community
         </button>
       </nav>
