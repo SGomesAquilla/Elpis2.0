@@ -2,7 +2,7 @@
 ======================
 
 A spiritual companion web application rebuilt with Vue.js, focusing on improved organization, reactivity, and user experience.
-You can test the app at: [https://jocular-vacherin-d81743.netlify.app/](elpis.com)
+You can test the app at: [elpis.com](https://jocular-vacherin-d81743.netlify.app/)
 
 **Background**
 ---------------
