@@ -1,29 +1,53 @@
-# Elpis_Project_V2
+**Elpis Project V2**
+======================
 
-This template should help get you started developing with Vue 3 in Vite.
+A spiritual companion web application rebuilt with Vue.js, focusing on improved organization, reactivity, and user experience.
 
-## Recommended IDE Setup
+**Background**
+---------------
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+This project originated as a learning experience with HTML, CSS, and JavaScript. The original project, Elpis, was built from scratch and has since been recreated using Vue.js to enhance its functionality and maintainability.
 
-## Customize configuration
+**What's New**
+--------------
 
-See [Vite Configuration Reference](https://vite.dev/config/).
+* Rebuilt with Vue.js for improved organization and reactivity
+* Enhanced CSS navbar with hamburger menu functionality
+* Improved code structure using Vue components
+* Ongoing development to incorporate more Vue features and complexity
 
-## Project Setup
+**Features**
+------------
 
-```sh
-npm install
-```
+* Bible Access: Read and explore inspirational texts directly from the app
+* Daily Devotions: Follow daily plans for reflection and prayer
+* In-Depth Study: Delve deeper into God's Word with Bible studies and commentaries (functionality not yet implemented)
+* Uplifting Music: Listen to Christian music to inspire and uplift your spirit (functionality uses Youtube links currently)
+* Community Connection: Connect with like-minded individuals in an online forum or find local churches and study groups (functionality limited, signup form only)
 
-### Compile and Hot-Reload for Development
+**Getting Started**
+-------------------
 
-```sh
-npm run dev
-```
+* Clone this repository
+* Install dependencies with `npm install`
+* Open the project in your preferred code editor
 
-### Compile and Minify for Production
+**Project Structure**
+---------------------
 
-```sh
-npm run build
-```
+* `src/`: Vue.js application code
+* `components/`: Reusable Vue components
+* `assets/`: Images, styles, and other assets
+* `main.js`: Vue.js application entry point
+
+**Future Development**
+----------------------
+
+* Implementing full functionality for In-Depth Study and Community Connection features
+* Enhancing user experience with additional Vue features and animations
+* Refactoring code for improved performance and maintainability
+
+**Original Project**
+-------------------
+
+The original Elpis project can be found at [https://github.com/SGomesAquilla/Elpis](https://github.com/SGomesAquilla/Elpis).
