@@ -2,7 +2,7 @@
 
 <template>
     <section class="maintext">
-      <p><h2>"Elpis: Your Spiritual Companion</h2>Elpis is designed to be your go-to app for deepening your connection with God. Whether you're working, taking a break, or simply seeking spiritual nourishment, Elpis offers a variety of features to support your faith journey.</p>
+      <p><h2>Elpis: Your Spiritual Companion</h2>Elpis is designed to be your go-to app for deepening your connection with God. Whether you're working, taking a break, or simply seeking spiritual nourishment, Elpis offers a variety of features to support your faith journey.</p>
       <p><h2>Key Features:</h2></p>
         <ul>
           <li>

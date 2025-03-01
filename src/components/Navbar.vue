@@ -40,13 +40,21 @@
 </template>
 
 <style scoped>
+  header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+  }
+
   .menu {
     display: flex;
     align-items: center;
     justify-content: space-between; /* Distributes items */
     width: 100%; /* Ensure it fills the header */
-    background-color: rgba(253, 253, 253, 0.653);
+    background-color: rgb(246, 240, 240);
     height: 59px;
+    box-shadow: 1px 2px 20px rgba(0, 0, 0, 0.366);
   }
 
   button {
