@@ -17,6 +17,10 @@
             default: 1,
             validator: (value) => Object.keys(cardBackgrounds).includes(String(value)),
         },
+        routeTo: {
+            type: String,
+            default: '/',
+        },
     });
 
     //Computed property to get the background URL
@@ -61,7 +65,7 @@
     <section>
         <div class="container" :style="{'background-image': `url(${backgroundImage})`}">
             <div class="card-text">
-                <a href="http://" target="_blank" rel="noopener noreferrer">{{ truncatedText }}</a>
+                <RouterLink :to="routeTo">{{ truncatedText }}</RouterLink>
             </div>
             <nav>
                 <button @click="likeButton" :class="{ 'click': isHeartToggled }"><i :class="toggledHeart" :style="heartStyle" style="font-weight: 500;"></i></button>
