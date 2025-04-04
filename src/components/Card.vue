@@ -10,7 +10,7 @@
         },
         wordLimit: {
             type: Number,
-            default: 35
+            default: 45
         },
         background: {
             type: Number,
@@ -83,10 +83,13 @@
         border-radius: 23px;
         background-size: cover;
         margin: 0 87px;
+        margin-top: 2rem;
+        margin-bottom: 8rem;
     }
 
     .card-text {
-        margin-top: 106px;
+        margin-top: auto;
+        margin-bottom: 0;
         height: auto;
         width: 80%;
         display: flex;
@@ -111,7 +114,7 @@
         width: 100%;
         border-bottom-left-radius: 23px;
         border-bottom-right-radius: 23px;
-        background-color: rgba(0, 0, 0, 0.408);
+        background-color: rgba(63, 63, 63, 0.408);
     }
 
     section button {
