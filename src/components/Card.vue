@@ -74,9 +74,10 @@
 
 <style scoped>
     .container {
+        position: relative;
         display: flex;
         flex-direction: column;
-        justify-content: space-between;
+        justify-content: flex-start;
         width: 48%;
         height: 38vh;
         gap: 25px;
@@ -85,20 +86,20 @@
         margin: 0 87px;
         margin-top: 2rem;
         margin-bottom: 8rem;
+        padding-bottom: 55px;
     }
 
     .card-text {
-        margin-top: auto;
-        margin-bottom: 0;
-        height: auto;
+        flex-grow: 1;
         width: 80%;
         display: flex;
+        flex-direction: column;
         text-align: center;
         box-sizing: border-box;
         align-self: center;
         justify-content: center;
         border: solid rgba(255, 255, 255, 0);
-        background-color: rgba(225, 202, 202, 0.14);
+        background-color: rgba(225, 202, 202, 0);
         border-radius: 10px;
         font-family: Garamond, Playfair Display, or EB Garamond for a timeless, refined look;
         font-size: 120%;
@@ -108,13 +109,15 @@
     }
 
     nav {
+        position: absolute;
+        bottom: 0;
         display: flex;
         justify-content: center;
         gap: 50px;
         width: 100%;
         border-bottom-left-radius: 23px;
         border-bottom-right-radius: 23px;
-        background-color: rgba(63, 63, 63, 0.408);
+        background-color: rgba(107, 107, 107, 0.408);
     }
 
     section button {

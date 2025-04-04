@@ -5,14 +5,12 @@
 <template>
     <footer>
         © 2024 | Todos os direitos e imagens são reservados aos seus respectivos donos e empresas | Esse trabalho não possui fins lucrativos | Desenvolvido por Áquilla Siqueira Gomes | Para mais detalhes entre em contato:
-        <ul>
-            <li>
-                <a target="_blank" href="https://www.linkedin.com/in/sgaquilla/"><img :src="logo.linkedin" alt="linkedin"></a>
-                <a target="_blank" href="https://mail.google.com/mail/u/0/#inbox?compose=CllgCJfrKnGhGpshJxsHHqvFlsxxDFPJHCXfNrDGpMNxlsQThSHXmgVSZsCBQkjTrLrxXsTQkSV"><img alt="gmail" :src="logo.gmail"></a>
-                <a target="_blank" href="https://github.com/SGomesAquilla"><img alt="github" :src="logo.github"></a>
-            </li>
-        </ul>
-  </footer>
+        <div class="footer-nav">
+            <a target="_blank" href="https://www.linkedin.com/in/sgaquilla/"><img :src="logo.linkedin" alt="linkedin"></a>
+            <a target="_blank" href="https://mail.google.com/mail/u/0/#inbox?compose=CllgCJfrKnGhGpshJxsHHqvFlsxxDFPJHCXfNrDGpMNxlsQThSHXmgVSZsCBQkjTrLrxXsTQkSV"><img alt="gmail" :src="logo.gmail"></a>
+            <a target="_blank" href="https://github.com/SGomesAquilla"><img alt="github" :src="logo.github"></a>
+        </div>
+    </footer>
 </template>
 
 <style scoped>
@@ -40,10 +38,9 @@
         border-radius: 50%;
     }
 
-    footer ul {
-        list-style: none;
-        padding-top: 1%;
-        padding-right: 40%;
-        padding-bottom: 1%;
+    .footer-nav {
+        display: flex;
+        justify-content: center;
+        gap: 7%;
     }
 </style>
