@@ -1,36 +1,70 @@
 <script setup>
     import { defineProps, ref, computed } from 'vue';
+    import cardBackgrounds from '@/assets/card_backgrounds/cardBackgrounds.js'
 
+    //props
     const props = defineProps({
         text: {
             type: String,
-            default: ' "be able to test and approve what God’s will is—his good, pleasing and perfect will." - Romans 12:2 ',
+            default: ' "Jeremiah 29:11 - For I know the plans I have for you, declares the Lord, plans for welfare and not for evil, to give you a future and a hope." ',
         },
         wordLimit: {
             type: Number,
-            default: 25
+            default: 35
+        },
+        background: {
+            type: Number,
+            default: 1,
+            validator: (value) => Object.keys(cardBackgrounds).includes(String(value)),
         }
     });
 
-    const fullText = ref(props.text);
-    
+    //Computed property to get the background URL
+    const backgroundImage = computed(() => {
+        return cardBackgrounds[props.background] || cardBackgrounds[1];
+    });
+
+    //truncate text functionality
     const truncatedText = computed(() => {
-        const words = fullText.value.split(' ');
+        const words = props.text.split(' ');
         if (words.length > props.wordLimit) {
-            return words.slice(0, props.wordLimit).join(' ...');
+            return words.slice(0, props.wordLimit).join(' ') + '...';
         }
-        return fullText.value;
+        return props.text;
+    });
+
+    //like button functionlaity
+    const isHeartToggled = ref(false);
+
+    //everytime hamburger-menu class item is clicked its states changes through true and false, and this affects the css with the .click event I set
+    const likeButton = () => {
+        isHeartToggled.value = !isHeartToggled.value;
+    };
+
+    //so I dont need to write this conditional every time on several buttons
+    const toggledHeart = computed(() => {
+        return {
+            'pi': true, // Always apply the pi class
+            'pi-heart-fill': isHeartToggled.value, // Apply pi-heart-fill when toggled
+            'pi-heart': !isHeartToggled.value, // Apply pi-heart when not toggled
+        };
+    });
+
+    const heartStyle = computed(() => {
+        return {
+            'color': isHeartToggled.value ? 'red' : 'inherit'
+        };
     });
 </script>
 
 <template>
     <section>
-        <div class="container">
+        <div class="container" :style="{'background-image': `url(${backgroundImage})`}">
             <div class="card-text">
-                {{ text }}
+                {{ truncatedText }}
             </div>
             <nav>
-                <button><i class="pi pi-heart" style="font-weight: 500;"></i></button>
+                <button @click="likeButton" :class="{ 'click': isHeartToggled }"><i :class="toggledHeart" :style="heartStyle" style="font-weight: 500;"></i></button>
                 <button><i class="pi pi-share-alt" style="font-weight: 500;"></i></button>
                 <button><i class="pi pi-ellipsis-h" style="font-weight: 500;"></i></button>
             </nav>
@@ -47,12 +81,12 @@
         height: 38vh;
         gap: 25px;
         border-radius: 23px;
-        background-color: rgba(255, 255, 255, 0.815);
+        background-size: cover;
         margin: 0 87px;
     }
 
     .card-text {
-        margin-top: 117px;
+        margin-top: 106px;
         height: auto;
         width: 80%;
         display: flex;
@@ -60,7 +94,14 @@
         box-sizing: border-box;
         align-self: center;
         justify-content: center;
-        border: solid rgba(255, 192, 203, 0);
+        border: solid rgba(255, 255, 255, 0);
+        background-color: rgba(225, 202, 202, 0.14);
+        border-radius: 10px;
+        font-family: Garamond, Playfair Display, or EB Garamond for a timeless, refined look;
+        font-size: 120%;
+        font-weight: bold;
+        color: rgb(0, 0, 0);
+        backdrop-filter: blur(2px);
     }
 
     nav {
@@ -70,7 +111,7 @@
         width: 100%;
         border-bottom-left-radius: 23px;
         border-bottom-right-radius: 23px;
-        background-color: rgba(0, 0, 0, 0.486);
+        background-color: rgba(0, 0, 0, 0.408);
     }
 
     section button {

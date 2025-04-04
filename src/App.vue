@@ -12,7 +12,7 @@
     <Navbar />
     <main id="page" class="container">
       <Hero title="Welcome to Elpis, your daily dose of hope" subtitle="Focus on renwing your mind in the word of God. Preachings, Worship and online Bible. " />
-      <Card />
+      <Card background="3" />
     </main>
   </body>
   <Foot />
