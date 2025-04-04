@@ -1,6 +1,7 @@
 <script setup>
   import logo from '@/assets/img/images.js';
   import { ref, computed } from 'vue';
+  import { RouterLink } from 'vue-router';
 
   const isMenuOpen = ref(false);
 
@@ -18,17 +19,17 @@
 <template>
   <header>
     <div class="menu">
-      <a href=""><img :src="logo.elpis" class="elpisL" alt="Home" :style="{ display: toggledHamburger }"></a>
+      <RouterLink to="/"><img :src="logo.elpis" class="elpisL" alt="Home" :style="{ display: toggledHamburger }"></RouterLink>
       <nav class="nav-buttons">
-        <button class="navButton" :style="{ display: toggledHamburger }">
+        <RouterLink to="/reading" class="navButton" :style="{ display: toggledHamburger }">
           <img :src="logo.reading" class="navIcon" alt="Reading"> Reading
-        </button>
-        <button class="navButton" :style="{ display: toggledHamburger }">
+        </RouterLink>
+        <RouterLink to="/songs" class="navButton" :style="{ display: toggledHamburger }">
           <img :src="logo.song" class="navIcon" alt="Songs"> Songs
-        </button>
-        <button class="navButton" :style="{ display: toggledHamburger }">
+        </RouterLink>
+        <RouterLink to="/community" class="navButton" :style="{ display: toggledHamburger }">
           <img :src="logo.community" class="navIcon" alt="Community"> Community
-        </button>
+        </RouterLink>
       </nav>
       <button class="hamburger-menu" @click="toggleMenu" :class="{ 'click': isMenuOpen }">
         <div class="bar"></div>
@@ -40,6 +41,11 @@
 </template>
 
 <style scoped>
+  a {
+    text-decoration: none;
+    color: black;
+  }
+
   header {
     position: fixed;
     top: 0;
@@ -57,16 +63,13 @@
     box-shadow: 1px 2px 20px rgba(0, 0, 0, 0.366);
   }
 
-  button {
-    padding: 6px;
-  }
-
   .nav-buttons {
     display: flex;
     justify-content: center; /* Center the buttons */
     flex-grow: 1; /* Allow to grow and take up space */
     white-space: nowrap; /* Prevent buttons from wrapping */
     gap: 35px;
+    padding-bottom: 4px;
   }
 
   .navButton {
@@ -80,6 +83,7 @@
     border: 0;
     border-radius: 15%;
     background-color: rgba(255, 255, 255, 0);
+    padding: 6px;
   }
 
   .navButton:hover {
@@ -119,7 +123,7 @@
   .bar {
     margin: 6px 7px; /* centered inside the button */
     width: 41px; /*adjust hamburger size*/
-    height: 2px;
+    height: 2.5px;
     background-color: black;
     position: relative;
     transition: 250ms ease-in-out;

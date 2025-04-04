@@ -1,8 +1,11 @@
-import './assets/main.css'
-import 'primeicons/primeicons.css'
+import './assets/main.css';
+import 'primeicons/primeicons.css';
+import { createApp } from 'vue';
+import App from './App.vue';
+import router from './router';
 
+const app = createApp(App);
 
-import { createApp } from 'vue'
-import App from './App.vue'
+app.use(router);
 
-createApp(App).mount('#app')
+app.mount('#app');

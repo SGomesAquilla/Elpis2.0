@@ -1,5 +1,5 @@
 <script setup>
-    import { defineProps, ref, computed } from 'vue';
+    import { ref, computed } from 'vue';
     import cardBackgrounds from '@/assets/card_backgrounds/cardBackgrounds.js'
 
     //props
@@ -16,7 +16,7 @@
             type: Number,
             default: 1,
             validator: (value) => Object.keys(cardBackgrounds).includes(String(value)),
-        }
+        },
     });
 
     //Computed property to get the background URL
@@ -61,7 +61,7 @@
     <section>
         <div class="container" :style="{'background-image': `url(${backgroundImage})`}">
             <div class="card-text">
-                {{ truncatedText }}
+                <a href="http://" target="_blank" rel="noopener noreferrer">{{ truncatedText }}</a>
             </div>
             <nav>
                 <button @click="likeButton" :class="{ 'click': isHeartToggled }"><i :class="toggledHeart" :style="heartStyle" style="font-weight: 500;"></i></button>
@@ -132,5 +132,10 @@
 
     button:hover {
         color: white;
+    }
+    
+    a {
+        text-decoration: none;
+        color: black;
     }
 </style>
