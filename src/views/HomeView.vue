@@ -4,7 +4,7 @@
 </script>
 
 <template>
-    <Hero title="Welcome to Elpis, your daily dose of hope" subtitle="Focus on renwing your mind in the word of God. Preachings, Worship and online Bible. " />
+    <Hero title="Welcome to Elpis, your daily dose of hope" subtitle="Focus on renewing your mind in the word of God. Preachings, Worship and online Bible. " />
     <div class="main-title">Reading</div>
     <hr>
     <Card routeTo="/reading" background="3" text="2 Corinthians 4:16-18 - So we do not lose heart. Though our outer self is wasting away, our inner self is being renewed day by day. For this light momentary affliction is preparing for us an eternal weight of glory beyond all comparison, as we look not to the things that are seen but to the things that are unseen. For the things that are seen are transient, but the things that are unseen are eternal." />
