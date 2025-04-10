@@ -1,7 +1,8 @@
-<script setup></script>
+<script setup>
+</script>
 
 <template>
-    <section class="scrollbar-container">
+    <section class="scroller">
         <div class="category-wrap">
             <iframe width="500" height="315" src="https://www.youtube.com/embed/HsdDF1PgHgA?si=aDvaPIVaI35TxkSR" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
             <iframe width="500" height="315" src="https://www.youtube.com/embed/s7jXASBWwwI?si=LB4Wwl5gsMf_m5Dz" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
@@ -13,10 +14,12 @@
 </template>
 
 <style scoped>
-    .scrollbar-container {
-        border: solid pink;
+    .scroller {
+        overflow-x: scroll;
+        scroll-snap-type: x mandatory;
         margin-top: 100px;
-        width: auto;
+        margin-inline: auto;
+        width: 1000px;
         display: flex;
         flex-wrap: wrap;
         flex-direction: row;
@@ -25,7 +28,6 @@
     }
 
     .category-wrap {
-        border: solid black;
         padding-left: 3%;
         padding-right: 4%;
         display: flex;
